@@ -1,5 +1,9 @@
 import { useState } from "react";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { FiEye } from "react-icons/fi";
+import { HiOutlineCog6Tooth } from "react-icons/hi2";
 import { IoIosStar } from "react-icons/io";
+import { TfiPencilAlt } from "react-icons/tfi";
 
 function HostelTable() {
   const hostelData = [
@@ -123,7 +127,7 @@ function HostelTable() {
   return (
     <div className="overflow-x-auto mt-5">
       <table className="min-w-full divide-y border divide-gray-200">
-        <thead >
+        <thead>
           <tr className="border ">
             <th></th>
             <th className="pr-4 py-7 bg-gray-50 text-left text-base font-semibold text-black uppercase tracking-wider">
@@ -152,7 +156,7 @@ function HostelTable() {
             </th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200 border">
+        <tbody className="divide-y divide-gray-200 border text-black/75">
           {hostelData.map((hostel) => (
             <tr key={hostel.id}>
               <td className="px-4">
@@ -175,6 +179,20 @@ function HostelTable() {
               <td className="pr-4 py-4 whitespace-nowrap">
                 <button className="text-teal-500 font-medium py-1 px-3 rounded bg-[#CCEFED]">
                   {hostel.status}
+                </button>
+              </td>
+              <td className="py-4 flex">
+                <button className=" border p-2 rounded-l-lg text-black/75">
+                  <HiOutlineCog6Tooth />
+                </button>
+                <button className=" border p-2 text-black/75">
+                  <FiEye />
+                </button>
+                <button className=" border p-2 text-black/75">
+                  <TfiPencilAlt />
+                </button>
+                <button className=" p-2 border rounded-r-lg text-red-600">
+                  <FaRegTrashCan />
                 </button>
               </td>
             </tr>
