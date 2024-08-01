@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sidebar fixed for mobile, relative for larger screens */
+.sidebar {
+  @apply fixed inset-y-0 left-0 z-50 transition-transform duration-300;
+}
+
+/* Translate for hidden sidebar */
+.translate-hidden {
+  @apply -translate-x-full;
+}
+
+/* Translate for visible sidebar */
+.translate-visible {
+  @apply translate-x-0;
+}
+
+/* Make sidebar relative for larger screens */
+@media (min-width: 768px) {
+  .sidebar {
+    @apply relative translate-x-0;
+  }
+}
+
+/* Overlay for mobile devices */
+.overlay {
+  @apply fixed inset-0 bg-black opacity-50 md:hidden;
+}
